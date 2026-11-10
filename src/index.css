@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-script {
+    font-family: 'Alex Brush', cursive;
+  }
+  .font-handwriting {
+    font-family: 'Pinyon Script', cursive;
+  }
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+:root {
+  --color-canvas: #FFF8F9;
+  --color-pink-velvet: #F9D5D9;
+  --color-pink-soft: #FDE8EA;
+  --color-pink-deep: #D47986;
+  --color-white-silk: #FFFFFF;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F3E5AB;
+  --color-text-dark: #1C1618;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+}
+
+/* Silk drapery subtle backdrop pattern */
+.silk-drape-bg {
+  background: 
+    radial-gradient(ellipse at 20% 0%, rgba(249, 213, 217, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(249, 213, 217, 0.35) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+    linear-gradient(180deg, #FFFFFF 0%, #FFF8F9 50%, #FFF5F7 100%);
+}
+
+.silk-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 249, 0.92) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(249, 213, 217, 0.6);
+}
+
+.silk-velvet-card {
+  background: linear-gradient(135deg, #FFF9FA 0%, #FDF0F2 100%);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(212, 121, 134, 0.12);
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B38F26 0%, #D4AF37 50%, #9C781A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-gradient-btn {
+  background: linear-gradient(135deg, #EE9CA7 0%, #FFDDE1 100%);
+}
+
+/* Floating animation */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
+/* Fairy light twinkle */
+@keyframes fairyTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(255, 223, 130, 0.8));
+  }
+}
+
+.fairy-light {
+  animation: fairyTwinkle 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #F9D5D9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D47986;
+}
